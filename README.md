@@ -1,10 +1,8 @@
 # Scrimba GPT-4 Vision App
-========================
 
 A web application that integrates with OpenAI's GPT-4 Vision API to analyze images. Users can select an image, enter a descriptive query, and receive a detailed analysis based on both the image and text input. This project is built with Nuxt and leverages OpenAI's API for image and text-based AI interactions.
 
 ## Features
---------
 
 -   **Image Analysis**: Uses OpenAI's GPT-4 Vision API to analyze images based on a user-provided query.
 -   **Markdown Support**: The analysis result is formatted using Markdown, allowing for a more structured and readable output.
@@ -12,7 +10,6 @@ A web application that integrates with OpenAI's GPT-4 Vision API to analyze imag
 -   **Nuxt 3 Integration**: Built with Nuxt 3, providing a fast and modular development experience.
 
 ## Getting Started
----------------
 
 ### Prerequisites
 
@@ -58,7 +55,6 @@ A web application that integrates with OpenAI's GPT-4 Vision API to analyze imag
 3.  **Viewing the Result**: The analysis result will be displayed below, formatted with Markdown for readability.
 
 ## Project Structure
------------------
 
 -   **`/public/images`**: Contains the example images available for analysis.
 -   **`/pages`**: Nuxt page components.
@@ -66,7 +62,6 @@ A web application that integrates with OpenAI's GPT-4 Vision API to analyze imag
 -   **`/components`**: Vue components used in the app.
 
 ## API Reference
--------------
 
 ### `/api/bot` Endpoint
 
@@ -78,7 +73,6 @@ A web application that integrates with OpenAI's GPT-4 Vision API to analyze imag
     -   `output` (string): The formatted analysis result from OpenAI.
 
 ## Technologies Used
------------------
 
 -   **Nuxt 3**: The framework for building the frontend.
 -   **OpenAI API**: Used for GPT-4 Vision model capabilities.
@@ -86,7 +80,6 @@ A web application that integrates with OpenAI's GPT-4 Vision API to analyze imag
 -   **Tailwind CSS**: For styling the application.
 
 ## Deployment
-----------
 
 1.  **Build for Production**:
 
@@ -101,6 +94,5 @@ A web application that integrates with OpenAI's GPT-4 Vision API to analyze imag
     ```
 
 ## Credits
-------------
 
 Special thanks to Scrimba AI Career Path for the inspiration and resources that made this project possible.
