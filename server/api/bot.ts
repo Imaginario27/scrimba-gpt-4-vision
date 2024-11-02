@@ -16,7 +16,6 @@ export default defineEventHandler(async (event) => {
 
         const externalImage = `https://raw.githubusercontent.com/Imaginario27/scrimba-gpt-4-vision/refs/heads/master/public/images/${image}`
         
-        console.log(externalImage)
         const response = await openai.chat.completions.create({
             model: "gpt-4o-mini",
             messages: [
