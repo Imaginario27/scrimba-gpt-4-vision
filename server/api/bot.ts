@@ -14,8 +14,9 @@ export default defineEventHandler(async (event) => {
             dangerouslyAllowBrowser: false,
         })
 
-        const externalImage = `https://scrimba.com/links/${image}`
+        const externalImage = `https://raw.githubusercontent.com/Imaginario27/scrimba-gpt-4-vision/refs/heads/master/public/images/${image}`
         
+        console.log(externalImage)
         const response = await openai.chat.completions.create({
             model: "gpt-4o-mini",
             messages: [
@@ -42,6 +43,7 @@ export default defineEventHandler(async (event) => {
         return { output }
     } catch (error) {
         if (error instanceof Error) {
+            
             return { message: `Error: ${error.message}` }
         } else {
             return { message: "An unknown error occurred" }

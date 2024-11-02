@@ -42,7 +42,7 @@
                         class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                     <span>{{
                         loading ? "Analyzing Image..." : "Analyze"
-                        }}</span>
+                    }}</span>
                 </button>
             </form>
 
@@ -51,16 +51,18 @@
                 {{ error }}
             </p>
 
-            <!-- Display Analysis Result as Text -->
-            <div v-if="analysisResult" class="mt-6 text-center">
+            <!-- Display Analysis Result as Formatted Markdown -->
+            <div v-if="analysisResult" class="mt-6">
                 <p class="text-gray-800 font-semibold">Analysis Result:</p>
-                <p class="text-gray-700 mt-2">{{ analysisResult }}</p>
+                <div class="text-gray-700 mt-2" v-html="formattedResult"></div>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { ref, computed } from "vue"
+import { marked } from "marked"
 
 // Map images with their display names and URLs in the public folder
 const images = {
@@ -88,7 +90,7 @@ const prompts = {
         "Describe the texture, color, and appearance of the cheese.",
     "cheese-2.jpg":
         "Identify the type of cheese and any unique characteristics.",
-    "egg.jpg": "Explain the cooking method and appearance of the egg.",
+    "egg.jpg": "To which type of bird does this egg belong?",
     "menu.png": "Analyze the layout and design of the menu.",
 }
 
@@ -100,6 +102,9 @@ const analysisResult = ref(null)
 
 // Computed property to get the prompt for the selected image
 const examplePrompt = computed(() => prompts[selectedImage.value])
+
+// Computed property to format the analysis result as Markdown
+const formattedResult = computed(() => marked(analysisResult.value || ""))
 
 const analyzeImageWithDallE = async () => {
     loading.value = true
