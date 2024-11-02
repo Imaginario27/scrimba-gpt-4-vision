@@ -20,7 +20,6 @@
             <div class="flex flex-col items-center mb-6" v-if="selectedImage">
                 <img :src="imageMap[selectedImage]" :alt="selectedImage"
                     class="w-full h-auto object-cover rounded-lg" />
-                <span class="text-gray-600 mt-2">Example Image: {{ selectedImage }}</span>
             </div>
 
             <!-- Example Prompt Description -->
@@ -91,7 +90,9 @@ const prompts = {
     "cheese-2.jpg":
         "Identify the type of cheese and any unique characteristics.",
     "egg.jpg": "To which type of bird does this egg belong?",
-    "menu.png": "Analyze the layout and design of the menu.",
+    "menu.png": 
+        `Based on this menu, please recommend meal options considering the following: I have a big appetite, am allergic to shellfish, 
+        and crave a dessert that's both sweet and tart. I'd like to keep my total spend under $30"`,
 }
 
 const selectedImage = ref("building.jpg")
