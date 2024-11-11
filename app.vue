@@ -31,9 +31,10 @@
             <!-- Form -->
             <form @submit.prevent="analyzeImageWithDallE">
                 <!-- Textarea for Prompt -->
-                <textarea v-model="query" placeholder="Describe what you want to analyze about the image..."
+                <textarea 
+                    v-model="query" placeholder="Describe what you want to analyze about the image..."
                     class="w-full p-3 bg-gray-200 border border-gray-300 rounded-lg mb-4 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    rows="4" required></textarea>
+                    rows="4" required maxlength="500"></textarea>
 
                 <!-- Analyze Button -->
                 <button type="submit" :disabled="loading"
