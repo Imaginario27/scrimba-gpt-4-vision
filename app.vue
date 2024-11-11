@@ -1,6 +1,7 @@
 <template>
-    <div class="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-100">
-        <h1 class="text-3xl font-bold text-gray-800 mb-6">
+    <div class="min-h-screen flex flex-col items-center justify-center p-8 bg-[url('/assets/images/bg-pattern.png')]">
+
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 drop-shadow-lg">
             Analyze Image with DALL-E
         </h1>
 
@@ -23,7 +24,7 @@
             </div>
 
             <!-- Example Prompt Description -->
-            <p class="text-gray-700 mb-4 text-center">
+            <p class="text-gray-500 mb-4 text-center">
                 Example Prompt: <em>{{ examplePrompt }}</em>
             </p>
 
